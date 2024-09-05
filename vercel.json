@@ -2,14 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "AlexH.py",
+      "src": "alexH.py",
       "use": "@vercel/python"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "AlexH.py"
+      "dest": "alexH.py"
     }
   ]
 }
