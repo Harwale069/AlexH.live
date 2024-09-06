@@ -1,4 +1,4 @@
-import tim
+import time
 import os
 import itertools
 
