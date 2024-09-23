@@ -57,6 +57,7 @@ def walter_white_animation():
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢷⠾⠛⠂⢹⠀⠀⠀⢡⠀⠀⠀⠀⠀⠙⠛⠿⢿               
 
     """
+    print (text)
     for color in itertools.cycle(colors):
         clear_screen()
         print(f"\033[38;5;{color}m{frame}\033[0m")
