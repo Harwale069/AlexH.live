@@ -39,7 +39,7 @@ def bullet_animation():
 def walter_white_animation():
     colors = range(1, 32)  # Terminal color codes from 1 to 31
     frame = r"""
-Alex Harwood⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+Alex Harwood/AlexH.live/Harwale
 ⣿⣿⣿⣿⣿⣿⣿⣿⠟⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠉⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
 ⣿⣿⣿⣿⣿⣿⣿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢺⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
 ⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠆⠜⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
@@ -64,7 +64,7 @@ Alex Harwood⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
 # Main function to run the animation
 def main():
     print_text()
-    time.sleep(5)  # Show the text for 5 seconds
+    time.sleep(3)  # Show the text for 5 seconds
     bullet_animation()
     walter_white_animation()
 
