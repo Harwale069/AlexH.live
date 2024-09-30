@@ -45,7 +45,7 @@ def get_questions():
     ("What is 12 divided by 4?", ["1", "2", "3", "4"], "3"),
     ("What is the tallest mountain in the world?", ["K2", "Kangchenjunga", "Mount Everest", "Lhotse"], "Mount Everest"),
     ("What do you use to write on a blackboard?", ["Chalk", "Marker", "Pen", "Pencil"], "Chalk"),
-]
+
 
         ],
         'medium': [
@@ -78,7 +78,7 @@ def get_questions():
     ("What year did the Titanic sink?", ["1912", "1910", "1905", "1915"], "1912"),
     ("Who discovered penicillin?", ["Marie Curie", "Alexander Fleming", "Louis Pasteur", "Isaac Newton"], "Alexander Fleming"),
     ("What is the largest island in the world?", ["Australia", "Greenland", "New Guinea", "Borneo"], "Greenland"),
-]
+
 
         ],
         'hard': [
@@ -110,7 +110,7 @@ def get_questions():
     ("What is the largest bone in the human body?", ["Humerus", "Tibia", "Femur", "Pelvis"], "Femur"),
     ("What was the first country to grant women the right to vote?", ["New Zealand", "Australia", "United States", "Finland"], "New Zealand"),
     ("What is the primary ingredient in tofu?", ["Soybeans", "Peas", "Wheat", "Rice"], "Soybeans"),
-]
+
 
         ]
     }
