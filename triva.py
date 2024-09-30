@@ -11,7 +11,7 @@ def print_with_blinking_effect(text):
 def get_questions():
     return {
         'easy': [
-            easy_questions = [
+            
     ("What is 2 + 2?", ["3", "4", "5", "6"], "4"),
     ("What color is the sky?", ["Blue", "Green", "Red", "Yellow"], "Blue"),
     ("What is the capital of France?", ["Berlin", "Madrid", "Paris", "Rome"], "Paris"),
@@ -49,7 +49,7 @@ def get_questions():
 
         ],
         'medium': [
-            medium_questions = [
+            
     ("What is the capital of Australia?", ["Sydney", "Canberra", "Melbourne", "Brisbane"], "Canberra"),
     ("Which element has the chemical symbol O?", ["Osmium", "Oxygen", "Gold", "Silver"], "Oxygen"),
     ("Who wrote 'Romeo and Juliet'?", ["Charles Dickens", "Mark Twain", "William Shakespeare", "Jane Austen"], "William Shakespeare"),
@@ -82,7 +82,7 @@ def get_questions():
 
         ],
         'hard': [
-            hard_questions = [
+        
     ("What is the capital of Bhutan?", ["Thimphu", "Kathmandu", "Dhaka", "Colombo"], "Thimphu"),
     ("Who is the author of 'The Hitchhiker's Guide to the Galaxy'?", ["Douglas Adams", "Isaac Asimov", "Philip K. Dick", "Arthur C. Clarke"], "Douglas Adams"),
     ("What is the principle behind the operation of a refrigerator?", ["Thermodynamics", "Electromagnetism", "Optics", "Kinematics"], "Thermodynamics"),
