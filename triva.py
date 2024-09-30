@@ -27,7 +27,7 @@ def display_leaderboard():
 
 # Function to run the main trivia loop
 def main():
-    print("Welcome to CLI Trivia!\n")
+    print("Welcome to Alex Harwoods CLI Trivia!\n")
 
     # List of questions, options, and correct answers categorized by difficulty
     questions_by_difficulty = {
