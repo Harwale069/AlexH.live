@@ -1,4 +1,4 @@
-import random
+irhghimport random
 
 # Questions categorized by difficulty
 questions = {
