@@ -3,46 +3,52 @@
 # Questions categorized by difficulty
 questions = {
     "easy": [
-        ("What is the capital of France?", ["Paris", "London", "Rome", "Berlin"], "Paris"),
+        ("What is the capital of France?", ["Paris", "London", "Berlin", "Madrid"], "Paris"),
         ("What is 2 + 2?", ["3", "4", "5", "6"], "4"),
         ("What color is the sky?", ["Blue", "Green", "Red", "Yellow"], "Blue"),
-        ("What is the largest mammal?", ["Elephant", "Blue Whale", "Giraffe", "Rhino"], "Blue Whale"),
-        ("What is the first letter of the alphabet?", ["A", "B", "C", "D"], "A"),
-        ("How many colors are in a rainbow?", ["5", "6", "7", "8"], "7"),
-        ("What is the name of the fairy in Peter Pan?", ["Tinkerbell", "Cinderella", "Aurora", "Snow White"], "Tinkerbell"),
-        ("What is the boiling point of water?", ["100°C", "90°C", "80°C", "110°C"], "100°C"),
-        ("Which animal is known as the King of the Jungle?", ["Lion", "Tiger", "Elephant", "Bear"], "Lion"),
-        ("What is the capital of Japan?", ["Tokyo", "Seoul", "Beijing", "Bangkok"], "Tokyo"),
-        ("What is the shape of the Earth?", ["Flat", "Cube", "Sphere", "Cylinder"], "Sphere"),
-        ("What gas do plants absorb?", ["Oxygen", "Carbon Dioxide", "Nitrogen", "Hydrogen"], "Carbon Dioxide"),
-        ("What is the color of an emerald?", ["Red", "Green", "Blue", "Yellow"], "Green"),
-        ("What is the capital of Italy?", ["Rome", "Paris", "Madrid", "Lisbon"], "Rome"),
-        ("Which planet is known as the Red Planet?", ["Earth", "Mars", "Jupiter", "Venus"], "Mars"),
-        ("What is the main ingredient in guacamole?", ["Avocado", "Tomato", "Onion", "Pepper"], "Avocado"),
-        ("Which country is known for the Eiffel Tower?", ["Spain", "Italy", "France", "Germany"], "France"),
-        ("What is the largest ocean on Earth?", ["Atlantic", "Indian", "Arctic", "Pacific"], "Pacific"),
+        ("What is the largest mammal?", ["Elephant", "Blue Whale", "Giraffe", "Shark"], "Blue Whale"),
+        ("What is the capital of the USA?", ["Washington, D.C.", "New York", "Los Angeles", "Chicago"], "Washington, D.C."),
+        ("What is the smallest prime number?", ["0", "1", "2", "3"], "2"),
+        ("What is the main ingredient in guacamole?", ["Tomato", "Avocado", "Lettuce", "Pepper"], "Avocado"),
+        ("Which planet is known as the Red Planet?", ["Mars", "Jupiter", "Saturn", "Earth"], "Mars"),
+        ("What is the chemical symbol for gold?", ["Ag", "Au", "Pb", "Fe"], "Au"),
+        ("What is the largest ocean on Earth?", ["Atlantic Ocean", "Indian Ocean", "Arctic Ocean", "Pacific Ocean"], "Pacific Ocean"),
         ("What is the capital of Canada?", ["Toronto", "Ottawa", "Vancouver", "Montreal"], "Ottawa"),
-        ("How many continents are there?", ["5", "6", "7", "8"], "7"),
-        ("What is the fastest land animal?", ["Cheetah", "Lion", "Horse", "Elephant"], "Cheetah"),
+        ("What is the name of the fairy in Peter Pan?", ["Wendy", "Tinker Bell", "Dorothy", "Alice"], "Tinker Bell"),
+        ("How many colors are there in a rainbow?", ["5", "6", "7", "8"], "7"),
+        ("What is the capital of Italy?", ["Rome", "Milan", "Venice", "Florence"], "Rome"),
+        ("What is the freezing point of water?", ["0°C", "32°F", "100°F", "100°C"], "0°C"),
+        ("What is the longest river in the world?", ["Amazon", "Nile", "Yangtze", "Mississippi"], "Nile"),
+        ("What is the largest planet in our solar system?", ["Earth", "Mars", "Jupiter", "Saturn"], "Jupiter"),
+        ("What is the currency of Japan?", ["Yen", "Dollar", "Euro", "Pound"], "Yen"),
+        ("What is the capital of Australia?", ["Sydney", "Canberra", "Melbourne", "Brisbane"], "Canberra"),
+        ("What is the main ingredient in bread?", ["Flour", "Sugar", "Salt", "Water"], "Flour"),
+        ("What is the capital of Egypt?", ["Cairo", "Alexandria", "Luxor", "Aswan"], "Cairo"),
     ],
     "medium": [
-        ("What is the capital of Australia?", ["Sydney", "Canberra", "Melbourne", "Brisbane"], "Canberra"),
-        ("What is the chemical symbol for gold?", ["Au", "Ag", "Pb", "Fe"], "Au"),
-        ("Which planet is closest to the sun?", ["Earth", "Mars", "Mercury", "Venus"], "Mercury"),
-        ("What is the largest organ in the human body?", ["Heart", "Liver", "Skin", "Lungs"], "Skin"),
-        ("What is the smallest prime number?", ["1", "2", "3", "4"], "2"),
-        ("Who wrote 'Romeo and Juliet'?", ["Mark Twain", "Charles Dickens", "William Shakespeare", "Jane Austen"], "William Shakespeare"),
-        ("What is the main ingredient in pesto?", ["Basil", "Parsley", "Cilantro", "Mint"], "Basil"),
-        ("What is the hardest natural substance?", ["Gold", "Iron", "Diamond", "Quartz"], "Diamond"),
-        ("What year did the Titanic sink?", ["1910", "1912", "1914", "1916"], "1912"),
-        ("What is the capital of Egypt?", ["Cairo", "Alexandria", "Giza", "Luxor"], "Cairo"),
-        ("Which organ is responsible for pumping blood?", ["Liver", "Heart", "Lungs", "Kidneys"], "Heart"),
-        ("What is the longest river in the world?", ["Amazon", "Nile", "Yangtze", "Mississippi"], "Nile"),
-        ("Which country is known as the Land of the Rising Sun?", ["China", "Japan", "Thailand", "Korea"], "Japan"),
-        ("What is the main language spoken in Brazil?", ["Spanish", "Portuguese", "English", "French"], "Portuguese"),
-        ("What is the currency of Japan?", ["Yen", "Won", "Dollar", "Euro"], "Yen"),
+        ("What is the largest desert in the world?", ["Sahara", "Arabian", "Gobi", "Antarctic"], "Antarctic"),
+        ("Who wrote 'Romeo and Juliet'?", ["Mark Twain", "Jane Austen", "William Shakespeare", "Charles Dickens"], "William Shakespeare"),
+        ("What is the capital of Brazil?", ["Brasilia", "Rio de Janeiro", "São Paulo", "Salvador"], "Brasilia"),
+        ("What is the hardest natural substance?", ["Gold", "Iron", "Diamond", "Graphite"], "Diamond"),
+        ("Which planet is known for its rings?", ["Earth", "Mars", "Saturn", "Venus"], "Saturn"),
         ("Who painted the Mona Lisa?", ["Vincent van Gogh", "Pablo Picasso", "Leonardo da Vinci", "Claude Monet"], "Leonardo da Vinci"),
-        ("What is the capital city of Canada?", ["Ottawa", "Toronto", "Montreal", "Vancouver"], "Ottawa"),
+        ("What is the capital city of Canada?", ["Toronto", "Ottawa", "Vancouver", "Montreal"], "Ottawa"),
+        ("Who discovered penicillin?", ["Marie Curie", "Alexander Fleming", "Isaac Newton", "Albert Einstein"], "Alexander Fleming"),
+        ("What is the largest organ in the human body?", ["Heart", "Liver", "Skin", "Lung"], "Skin"),
+        ("What is the main language spoken in Brazil?", ["Spanish", "Portuguese", "French", "English"], "Portuguese"),
+        ("What is the boiling point of water?", ["100°C", "90°C", "110°C", "80°C"], "100°C"),
+        ("What is the capital of Thailand?", ["Bangkok", "Hanoi", "Phnom Penh", "Kuala Lumpur"], "Bangkok"),
+        ("What is the tallest mountain in the world?", ["K2", "Kangchenjunga", "Lhotse", "Mount Everest"], "Mount Everest"),
+        ("What is the primary ingredient in tofu?", ["Soybeans", "Peas", "Rice", "Corn"], "Soybeans"),
+        ("What is the capital of Russia?", ["Moscow", "Saint Petersburg", "Kiev", "Minsk"], "Moscow"),
+        ("What is the chemical formula for salt?", ["NaCl", "H2O", "CO2", "O2"], "NaCl"),
+        ("What is the largest land animal?", ["Elephant", "Giraffe", "Rhino", "Hippo"], "Elephant"),
+        ("What is the national sport of Japan?", ["Soccer", "Baseball", "Sumo", "Martial Arts"], "Sumo"),
+        ("What is the capital of Mexico?", ["Mexico City", "Guadalajara", "Cancún", "Tijuana"], "Mexico City"),
+        ("What is the main ingredient in pesto?", ["Basil", "Spinach", "Parsley", "Kale"], "Basil"),
+    ],
+    "hard": [
+        ("What is the smallest country in the world?", ["Monaco", "Nauru", "Vatican City", "San Marino"], "Vatican City"),
         ("Who was the first female Prime Minister of the UK?", ["Theresa May", "Margaret Thatcher", "Angela Merkel", "Golda Meir"], "Margaret Thatcher"),
         ("What is the most abundant element in the universe?", ["Hydrogen", "Oxygen", "Carbon", "Helium"], "Hydrogen"),
         ("What is the only planet that rotates on its side?", ["Uranus", "Venus", "Neptune", "Saturn"], "Uranus"),
@@ -59,7 +65,7 @@ questions = {
         ("What is the most expensive spice in the world?", ["Saffron", "Vanilla", "Cinnamon", "Pepper"], "Saffron"),
         ("What is the longest river in Asia?", ["Yangtze", "Mekong", "Ganges", "Indus"], "Yangtze"),
         ("What is the capital of Kazakhstan?", ["Astana", "Almaty", "Tashkent", "Bishkek"], "Astana"),
-        ("What is the official language of Iran?", ["Persian", "Arabic", "Turkish", "Kurdish"], "Persian"),
+        ("What is the official language of Iran?", ["Persian", "Arabic", "Turkish", "Kurdish"], "Persian")
     ]
 }
 
@@ -80,81 +86,86 @@ type_in_questions = [
     ("What is the currency of the United Kingdom?", "Pound"),
     ("What is the largest continent?", "Asia"),
     ("What is the capital of Australia?", "Canberra"),
-    ("What is the main ingredient in sushi?", "Rice"),
-    ("What is the capital of India?", "New Delhi"),
-    ("How many bones are in the adult human body?", "206"),
-    ("What is the hardest natural substance?", "Diamond"),
-    ("What is the chemical formula for water?", "H2O")
+    ("What is the most spoken language in the world?", "Mandarin"),
+    ("What is the highest mountain in Africa?", "Kilimanjaro"),
+    ("What is the capital of Canada?", "Ottawa"),
+    ("What is the chemical symbol for gold?", "Au"),
+    ("What is the largest ocean?", "Pacific Ocean")
 ]
 
-def get_difficulty():
-    while True:
-        difficulty = input("Choose difficulty (easy, medium, hard, extreme, or type-in): ").lower()
-        if difficulty in questions or difficulty == "type-in":
-            return difficulty
-        else:
-            print("Invalid difficulty. Please try again.")
+# Leaderboard
+leaderboard = []
 
-def select_questions(difficulty, num_questions):
-    if difficulty == "type-in":
-        return random.sample(type_in_questions, min(len(type_in_questions), num_questions))
-    else:
-        return random.sample(questions[difficulty], min(len(questions[difficulty]), num_questions))
+# Game functions
+def welcome_message():
+    print("\033[5mWELCOME TO ALEX HARWOOD'S CLI TRIVIA GAME\033[0m")
 
-def ask_question(question, options):
+def ask_question(question, options, correct_answer):
     print("\n" + question)
-    for idx, option in enumerate(options):
-        print(f"{idx + 1}. {option}")
+    for index, option in enumerate(options):
+        print(f"{index + 1}. {option}")
+    answer = input("Your answer (1-4): ")
+    return options[int(answer) - 1] == correct_answer
 
-def check_answer(user_answer, correct_answer, question_type):
-    if question_type == "multiple-choice":
-        return user_answer.strip().lower() in [correct_answer.lower(), str(options.index(correct_answer) + 1)]
-    elif question_type == "type-in":
-        return user_answer.strip().lower() == correct_answer.lower()
+def ask_type_in_question(question, correct_answer):
+    answer = input(question + " ")
+    return answer.strip().lower() == correct_answer.strip().lower()
 
-def trivia_game():
-    print("\nWELCOME TO ALEX HARWOOD'S CLI TRIVIA GAME")
-    total_score = 0
-    rounds = 1
-    global_leaderboard = []
+def play_game(difficulty, question_set):
+    score = 0
+    total_questions = 30 if difficulty != "type" else len(type_in_questions)
+
+    for i in range(total_questions):
+        if difficulty == "type":
+            question, correct_answer = random.choice(type_in_questions)
+            correct = ask_type_in_question(question, correct_answer)
+        else:
+            question, options, correct_answer = random.choice(question_set)
+            correct = ask_question(question, options, correct_answer)
+
+        if correct:
+            print("Correct!")
+            score += 1
+        else:
+            print(f"Wrong! The correct answer is: {correct_answer}")
+
+    return score
+
+def update_leaderboard(name, score):
+    leaderboard.append((name, score))
+    leaderboard.sort(key=lambda x: x[1], reverse=True)
+
+def show_leaderboard():
+    print("\n--- Leaderboard ---")
+    for index, (name, score) in enumerate(leaderboard):
+        print(f"{index + 1}. {name}: {score} points")
+
+def main():
+    welcome_message()
 
     while True:
-        difficulty = get_difficulty()
-        num_questions = int(input("How many questions per round? (max 30): "))
-        selected_questions = select_questions(difficulty, num_questions)
+        name = input("Enter your name: ")
+        difficulty = input("Choose difficulty (easy, medium, hard, type): ").lower()
 
-        for question in selected_questions:
-            if difficulty == "type-in":
-                question_text, correct_answer = question
-                user_answer = input(question_text + " ")
-                if check_answer(user_answer, correct_answer, "type-in"):
-                    print("Correct!")
-                    total_score += 1
-                else:
-                    print(f"Wrong! The correct answer was: {correct_answer}")
-            else:
-                question_text, options, correct_answer = question
-                ask_question(question_text, options)
-                user_answer = input("Your answer (type the option number or the answer): ")
-                if check_answer(user_answer, correct_answer, "multiple-choice"):
-                    print("Correct!")
-                    total_score += 1
-                else:
-                    print(f"Wrong! The correct answer was: {correct_answer}")
+        if difficulty == "easy":
+            score = play_game("easy", questions["easy"])
+        elif difficulty == "medium":
+            score = play_game("medium", questions["medium"])
+        elif difficulty == "hard":
+            score = play_game("hard", questions["hard"])
+        elif difficulty == "type":
+            score = play_game("type", None)
+        else:
+            print("Invalid difficulty level. Please try again.")
+            continue
 
-        print(f"\nYour total score: {total_score} out of {len(selected_questions)}")
-        rounds += 1
+        print(f"\nYour score: {score}/{30}")
+        update_leaderboard(name, score)
+        show_leaderboard()
 
-        play_again = input("Do you want to play another round? (yes/no): ").lower()
-        if play_again != "yes":
+        play_again = input("Do you want to play another round? (y/n): ").lower()
+        if play_again != 'y':
             break
 
-    print("Thank you for playing!")
-    player_name = input("Enter your name for the leaderboard: ")
-    global_leaderboard.append((player_name, total_score))
-    print("Global Leaderboard:")
-    for name, score in sorted(global_leaderboard, key=lambda x: x[1], reverse=True):
-        print(f"{name}: {score}")
-
 if __name__ == "__main__":
-    trivia_game()
+    main()
