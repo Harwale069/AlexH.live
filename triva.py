@@ -1,4 +1,4 @@
-\import random
+import random
 
 # Questions categorized by difficulty
 questions = {
