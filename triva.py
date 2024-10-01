@@ -1,236 +1,218 @@
 import random
-import time
 
-# Color codes for terminal output
-GREEN = "\033[92m"
-RED = "\033[91m"
-RESET = "\033[0m"
+# Define the trivia questions and answers for each difficulty level
+trivia_questions = {
+    "Easy": [
+        {"question": "What is the capital of France?", "answer": "paris"},
+        {"question": "What color is the sky on a clear day?", "answer": "blue"},
+        {"question": "What is 2 + 2?", "answer": "4"},
+        {"question": "What is the largest mammal?", "answer": "blue whale"},
+        {"question": "What fruit is known for having seeds on the outside?", "answer": "strawberry"},
+        {"question": "How many continents are there?", "answer": "7"},
+        {"question": "What is the name of the fairy in Peter Pan?", "answer": "tinkerbell"},
+        {"question": "What is the main ingredient in guacamole?", "answer": "avocado"},
+        {"question": "What do bees produce?", "answer": "honey"},
+        {"question": "What is the chemical symbol for water?", "answer": "h2o"},
+        {"question": "What animal is known as the king of the jungle?", "answer": "lion"},
+        {"question": "What is the currency used in Japan?", "answer": "yen"},
+        {"question": "What planet is known as the Red Planet?", "answer": "mars"},
+        {"question": "What is the first letter of the alphabet?", "answer": "a"},
+        {"question": "What is the largest ocean on Earth?", "answer": "pacific"},
+        {"question": "In which month is Christmas celebrated?", "answer": "december"},
+        {"question": "How many legs does a spider have?", "answer": "8"},
+        {"question": "What is the name of Harry Potter's pet owl?", "answer": "hedwig"},
+        {"question": "What is the smallest prime number?", "answer": "2"},
+        {"question": "What is the main ingredient in bread?", "answer": "flour"},
+        {"question": "Which planet is known for its rings?", "answer": "saturn"},
+        {"question": "What is the capital of Italy?", "answer": "rome"},
+        {"question": "What is the boiling point of water?", "answer": "100"},
+        {"question": "Which month comes after June?", "answer": "july"},
+        {"question": "How many sides does a triangle have?", "answer": "3"},
+        {"question": "What animal is known for its ability to change colors?", "answer": "chameleon"},
+        {"question": "What is the main language spoken in Brazil?", "answer": "portuguese"},
+        {"question": "What is the tallest mountain in the world?", "answer": "everest"},
+        {"question": "What is the name of the longest river in the world?", "answer": "nile"},
+        {"question": "What gas do plants absorb from the atmosphere?", "answer": "carbon dioxide"},
+        {"question": "What is the hardest natural substance on Earth?", "answer": "diamond"},
+        {"question": "What is the process by which plants make their food called?", "answer": "photosynthesis"},
+        {"question": "What is the primary language spoken in Canada?", "answer": "english"},
+        {"question": "What is the name of the largest desert in the world?", "answer": "sahara"},
+        {"question": "What is the capital of Australia?", "answer": "canberra"},
+    ],
+    "Medium": [
+        {"question": "What is the currency used in the United Kingdom?", "answer": "pound"},
+        {"question": "What is the name of the largest planet in our solar system?", "answer": "jupiter"},
+        {"question": "What chemical element has the symbol 'O'?", "answer": "oxygen"},
+        {"question": "Who wrote 'Romeo and Juliet'?", "answer": "shakespeare"},
+        {"question": "What is the capital city of Canada?", "answer": "ottawa"},
+        {"question": "In what year did the Titanic sink?", "answer": "1912"},
+        {"question": "What is the hardest rock?", "answer": "diamond"},
+        {"question": "What is the largest land animal?", "answer": "elephant"},
+        {"question": "How many bones are in the adult human body?", "answer": "206"},
+        {"question": "What is the longest river in South America?", "answer": "amazon"},
+        {"question": "What is the most spoken language in the world?", "answer": "mandarin"},
+        {"question": "What element does 'Na' represent on the periodic table?", "answer": "sodium"},
+        {"question": "In which city is the famous landmark the Eiffel Tower located?", "answer": "paris"},
+        {"question": "What is the name of the largest volcano in the world?", "answer": "mauna loa"},
+        {"question": "What planet is known as the Morning Star?", "answer": "venus"},
+        {"question": "What is the most common blood type?", "answer": "o"},
+        {"question": "Which planet is closest to the sun?", "answer": "mercury"},
+        {"question": "Who painted the Mona Lisa?", "answer": "da vinci"},
+        {"question": "What is the capital of Egypt?", "answer": "cairo"},
+        {"question": "What is the speed of light?", "answer": "299792458"},
+        {"question": "What is the name of the fictional wizarding school in Harry Potter?", "answer": "hogwarts"},
+        {"question": "What is the largest island in the world?", "answer": "greenland"},
+        {"question": "What is the main ingredient in sushi?", "answer": "rice"},
+        {"question": "Which animal is known as a 'panda bear'?", "answer": "giant panda"},
+        {"question": "What is the primary gas in the Earth's atmosphere?", "answer": "nitrogen"},
+        {"question": "What is the chemical symbol for gold?", "answer": "au"},
+        {"question": "Who is known as the 'Father of Geometry'?", "answer": "euclid"},
+        {"question": "What is the capital city of Thailand?", "answer": "bangkok"},
+        {"question": "What is the largest ocean on Earth?", "answer": "pacific"},
+        {"question": "What type of animal is a seahorse?", "answer": "fish"},
+        {"question": "What year did World War II end?", "answer": "1945"},
+        {"question": "What is the tallest building in the world?", "answer": "burj khalifa"},
+        {"question": "What is the main ingredient in chocolate?", "answer": "cocoa"},
+    ],
+    "Hard": [
+        {"question": "What is the square root of 144?", "answer": "12"},
+        {"question": "What is the capital of Iceland?", "answer": "reykjavik"},
+        {"question": "Who discovered penicillin?", "answer": "fleming"},
+        {"question": "What is the chemical formula for table salt?", "answer": "nacl"},
+        {"question": "What is the largest organ in the human body?", "answer": "skin"},
+        {"question": "What is the name of the longest river in Asia?", "answer": "yangtze"},
+        {"question": "What is the process by which plants absorb water called?", "answer": "osmosis"},
+        {"question": "What is the most abundant element in the universe?", "answer": "hydrogen"},
+        {"question": "What is the formula for calculating the area of a circle?", "answer": "pi*r^2"},
+        {"question": "Who wrote 'The Odyssey'?", "answer": "homer"},
+        {"question": "What is the capital of Nigeria?", "answer": "abuja"},
+        {"question": "What is the chemical symbol for potassium?", "answer": "k"},
+        {"question": "What is the main ingredient in hummus?", "answer": "chickpeas"},
+        {"question": "What is the largest continent?", "answer": "asia"},
+        {"question": "What is the unit of currency in Russia?", "answer": "ruble"},
+        {"question": "What is the capital of Mongolia?", "answer": "ulaanbaatar"},
+        {"question": "What is the primary component of the sun?", "answer": "hydrogen"},
+        {"question": "What is the largest bird in the world?", "answer": "ostrich"},
+        {"question": "Who is the author of 'Pride and Prejudice'?", "answer": "austen"},
+        {"question": "What is the chemical formula for glucose?", "answer": "c6h12o6"},
+        {"question": "What is the capital of Sri Lanka?", "answer": "sri jayawardenepura kotte"},
+        {"question": "What is the primary gas released by plants during photosynthesis?", "answer": "oxygen"},
+        {"question": "What is the most populated country in the world?", "answer": "china"},
+        {"question": "What is the capital of Switzerland?", "answer": "bern"},
+        {"question": "What is the currency used in South Africa?", "answer": "rand"},
+        {"question": "What is the highest waterfall in the world?", "answer": "angel falls"},
+        {"question": "Who painted 'The Starry Night'?", "answer": "van gogh"},
+        {"question": "What is the currency of India?", "answer": "rupee"},
+        {"question": "What is the fastest land animal?", "answer": "cheetah"},
+        {"question": "What is the primary component of natural gas?", "answer": "methane"},
+        {"question": "What is the name of the longest mountain range in the world?", "answer": "andes"},
+        {"question": "What is the scientific study of insects called?", "answer": "entomology"},
+        {"question": "What is the name of the galaxy that contains our solar system?", "answer": "milky way"},
+        {"question": "What is the capital of Finland?", "answer": "helsinki"},
+        {"question": "What is the main ingredient in traditional Japanese sake?", "answer": "rice"},
+    ],
+    "Extreme": [
+        {"question": "What is the name of the first artificial Earth satellite?", "answer": "sputnik"},
+        {"question": "What is the chemical formula for ammonia?", "answer": "nh3"},
+        {"question": "Who developed the theory of relativity?", "answer": "einstein"},
+        {"question": "What is the speed of sound?", "answer": "343"},
+        {"question": "What is the only planet in our solar system that rotates on its side?", "answer": "uranus"},
+        {"question": "What is the main ingredient in traditional pesto?", "answer": "basil"},
+        {"question": "What is the name of the first human to journey into outer space?", "answer": "gagarin"},
+        {"question": "What is the capital of Bhutan?", "answer": "thimphu"},
+        {"question": "What is the hardest natural substance on Earth?", "answer": "diamond"},
+        {"question": "What is the chemical symbol for silver?", "answer": "ag"},
+        {"question": "What is the world's longest river?", "answer": "nile"},
+        {"question": "What is the capital city of Azerbaijan?", "answer": "baku"},
+        {"question": "What is the scientific name for the common cold?", "answer": "rhinovirus"},
+        {"question": "What is the main ingredient in traditional tzatziki sauce?", "answer": "yogurt"},
+        {"question": "What is the name of the first woman to win a Nobel Prize?", "answer": "curie"},
+        {"question": "What is the capital city of Kazakhstan?", "answer": "nursultan"},
+        {"question": "What is the chemical symbol for iron?", "answer": "fe"},
+        {"question": "What is the largest planet in our solar system?", "answer": "jupiter"},
+        {"question": "What is the primary language spoken in Egypt?", "answer": "arabic"},
+        {"question": "What is the tallest mountain in North America?", "answer": "denali"},
+        {"question": "What is the name of the world's largest desert?", "answer": "antarctica"},
+        {"question": "What is the name of the first manned mission to land on the moon?", "answer": "apollo 11"},
+        {"question": "What is the chemical formula for table sugar?", "answer": "c12h22o11"},
+        {"question": "What is the main ingredient in traditional kimchi?", "answer": "cabbage"},
+        {"question": "What is the capital of Turkmenistan?", "answer": "ashgabat"},
+        {"question": "What is the primary gas found in the Earth's atmosphere?", "answer": "nitrogen"},
+        {"question": "What is the name of the largest volcano in the solar system?", "answer": "olympus mons"},
+        {"question": "What is the smallest country in the world?", "answer": "vatican city"},
+        {"question": "What is the capital of Paraguay?", "answer": "asuncion"},
+        {"question": "What is the name of the first cloned sheep?", "answer": "dolly"},
+        {"question": "What is the longest river in Europe?", "answer": "volga"},
+        {"question": "What is the largest organ inside the human body?", "answer": "liver"},
+    ],
+}
 
-def display_warning():
-    print(f"{RED}WARNING: Please make sure Caps Lock is ON!{RESET}")
+# Type-in questions
+type_in_questions = [
+    {"question": "What is your name?", "answer": "your name"},
+    {"question": "What is your favorite color?", "answer": "any color"},
+    {"question": "What is your favorite food?", "answer": "any food"},
+    {"question": "What is your hometown?", "answer": "any town"},
+    {"question": "What is your dream job?", "answer": "any job"},
+    {"question": "What is your favorite hobby?", "answer": "any hobby"},
+    {"question": "What is your favorite movie?", "answer": "any movie"},
+    {"question": "What is your favorite book?", "answer": "any book"},
+    {"question": "What is your favorite sport?", "answer": "any sport"},
+    {"question": "What is your favorite animal?", "answer": "any animal"},
+    {"question": "What is your favorite season?", "answer": "any season"},
+    {"question": "What is your favorite game?", "answer": "any game"},
+    {"question": "What is your favorite song?", "answer": "any song"},
+    {"question": "What is your favorite TV show?", "answer": "any show"},
+    {"question": "What is your favorite ice cream flavor?", "answer": "any flavor"},
+    {"question": "What is your favorite dessert?", "answer": "any dessert"},
+    {"question": "What is your favorite drink?", "answer": "any drink"},
+    {"question": "What is your favorite holiday?", "answer": "any holiday"},
+    {"question": "What is your favorite city?", "answer": "any city"},
+    {"question": "What is your favorite childhood memory?", "answer": "any memory"},
+]
 
-def get_question_sets():
-    easy_questions = [
-        ("What is the capital of France?", "paris"),
-        ("What color is the sky?", "blue"),
-        ("What is 2 + 2?", "4"),
-        ("What is the largest mammal?", "blue whale"),
-        ("What is the color of grass?", "green"),
-        ("What is the first letter of the alphabet?", "a"),
-        ("What planet is known as the Red Planet?", "mars"),
-        ("What is the main ingredient in guacamole?", "avocado"),
-        ("How many days are in a leap year?", "366"),
-        ("What is the freezing point of water?", "0"),
-        ("What is the capital of Japan?", "tokyo"),
-        ("What is 5 * 6?", "30"),
-        ("What is the currency used in the United States?", "dollar"),
-        ("What is the name of the fairy in Peter Pan?", "tinkerbell"),
-        ("How many continents are there?", "7"),
-        ("What is the largest ocean on Earth?", "pacific"),
-        ("What fruit is known for having seeds on the outside?", "strawberry"),
-        ("What is the color of a ripe banana?", "yellow"),
-        ("What gas do plants absorb?", "carbon dioxide"),
-        ("What is the tallest mountain in the world?", "everest"),
-        ("What animal is known as the King of the Jungle?", "lion"),
-        ("What is the name of the author who wrote 'Harry Potter'?", "j.k. rowling"),
-        ("What is the main language spoken in Spain?", "spanish"),
-        ("What is the hardest natural substance on Earth?", "diamond"),
-        ("What type of animal is a frog?", "amphibian"),
-        ("What is the largest desert in the world?", "sahara"),
-        ("What is the primary color of the sun?", "yellow"),
-        ("What is the boiling point of water in degrees Celsius?", "100"),
-        ("What is the name of the toy cowboy in Toy Story?", "woody"),
-        ("What type of tree produces acorns?", "oak"),
-        ("What is the name of the main character in 'The Great Gatsby'?", "gatsby"),
-        ("How many legs does a spider have?", "8"),
-        ("What is the capital of Italy?", "rome"),
-    ]
-
-    medium_questions = [
-        ("What is the chemical symbol for gold?", "au"),
-        ("What is the currency of Japan?", "yen"),
-        ("In which year did the Titanic sink?", "1912"),
-        ("What is the capital of Australia?", "canberra"),
-        ("What is the longest river in the world?", "nile"),
-        ("What element does 'O' represent on the periodic table?", "oxygen"),
-        ("Who wrote 'To Kill a Mockingbird'?", "harper lee"),
-        ("What is the hardest mineral on Earth?", "diamond"),
-        ("What is the largest planet in our solar system?", "jupiter"),
-        ("What is the capital city of Canada?", "ottawa"),
-        ("What is the smallest country in the world?", "vatican city"),
-        ("Who painted the Mona Lisa?", "da vinci"),
-        ("In which continent is the Amazon rainforest located?", "south america"),
-        ("What is the main language spoken in Brazil?", "portuguese"),
-        ("Who was the first person to walk on the moon?", "neil armstrong"),
-        ("What is the square root of 64?", "8"),
-        ("What is the most spoken language in the world?", "mandarin"),
-        ("What is the tallest building in the world?", "burj khalifa"),
-        ("Which planet is known for its rings?", "saturn"),
-        ("What is the currency of the United Kingdom?", "pound"),
-        ("Who discovered penicillin?", "alexander fleming"),
-        ("What is the capital of Greece?", "athens"),
-        ("What is the smallest bone in the human body?", "stapes"),
-        ("What is the capital of Egypt?", "cairo"),
-        ("What organ is responsible for pumping blood?", "heart"),
-        ("What is the chemical symbol for water?", "h2o"),
-        ("What gas do living beings need to breathe?", "oxygen"),
-        ("What is the largest land animal?", "elephant"),
-        ("What is the main ingredient in bread?", "flour"),
-        ("In which year did World War II end?", "1945"),
-        ("What is the most common gas in the Earth's atmosphere?", "nitrogen"),
-        ("What is the name of the first artificial satellite launched into space?", "sputnik"),
-        ("What is the capital of Russia?", "moscow"),
-    ]
-
-    hard_questions = [
-        ("Who developed the theory of relativity?", ["albert einstein", "einstein"]),
-        ("What is the capital city of Iceland?", ["reykjavik"]),
-        ("What is the largest organ in the human body?", ["skin"]),
-        ("Who wrote '1984'?", ["george orwell"]),
-        ("What is the name of the longest river in South America?", ["amazon"]),
-        ("In which year did the Berlin Wall fall?", ["1989"]),
-        ("Who painted 'The Starry Night'?", ["vincent van gogh"]),
-        ("What is the chemical symbol for potassium?", ["k"]),
-        ("What is the smallest planet in our solar system?", ["mercury"]),
-        ("What is the capital of New Zealand?", ["wellington"]),
-        ("Who was the first female Prime Minister of the United Kingdom?", ["margaret thatcher"]),
-        ("What is the most abundant gas in the Earth's atmosphere?", ["nitrogen"]),
-        ("What is the capital of Mongolia?", ["ulaanbaatar"]),
-        ("Who discovered the structure of DNA?", ["james watson", "francis crick"]),
-        ("What is the currency of South Africa?", ["rand"]),
-        ("What is the highest mountain in North America?", ["denali"]),
-        ("Who is known as the father of modern physics?", ["albert einstein"]),
-        ("What is the capital of Bhutan?", ["thimphu"]),
-        ("Who is the author of the 'Harry Potter' series?", ["j.k. rowling"]),
-        ("What is the largest volcano in the world?", ["mauna loa"]),
-        ("What is the most widely spoken language in the world?", ["mandarin"]),
-        ("Who wrote 'Pride and Prejudice'?", ["jane austen"]),
-        ("What is the only continent without reptiles or snakes?", ["antartica"]),
-        ("What is the capital of Kazakhstan?", ["nur-sultan"]),
-        ("What is the hardest natural substance?", ["diamond"]),
-        ("Who was the first president of the United States?", ["george washington"]),
-        ("What is the longest river in Asia?", ["yangtze"]),
-        ("Who invented the telephone?", ["alexander graham bell"]),
-        ("What is the currency of India?", ["rupee"]),
-        ("Who wrote the play 'Romeo and Juliet'?", ["william shakespeare"]),
-        ("What is the capital of Nigeria?", ["abuja"]),
-        ("What is the main ingredient in sushi?", ["rice"]),
-        ("What is the largest desert in the world?", ["sahara"]),
-        ("Who is known as the father of modern chemistry?", ["antoine lavoisier"]),
-    ]
-
-    extreme_questions = [
-        ("What is the fastest land animal?", ["cheetah"]),
-        ("What is the capital of Mongolia?", ["ulaanbaatar"]),
-        ("Who was the first person to climb Mount Everest?", ["sir edmund hillary"]),
-        ("What is the hardest natural substance?", ["diamond"]),
-        ("In which year did the Titanic sink?", ["1912"]),
-        ("What is the largest planet in our solar system?", ["jupiter"]),
-        ("What is the chemical formula for table salt?", ["nacl"]),
-        ("Who invented the light bulb?", ["thomas edison"]),
-        ("What is the capital of Canada?", ["ottawa"]),
-        ("What is the longest river in the world?", ["nile"]),
-        ("What is the main ingredient in hummus?", ["chickpeas"]),
-        ("Who painted the ceiling of the Sistine Chapel?", ["michelangelo"]),
-        ("What is the capital of Finland?", ["helsinki"]),
-        ("What is the largest country in the world?", ["russia"]),
-        ("What is the square root of 256?", ["16"]),
-        ("Who wrote 'Moby Dick'?", ["herman melville"]),
-        ("What is the capital of Australia?", ["canberra"]),
-        ("Who is known as the father of psychoanalysis?", ["sigmund freud"]),
-        ("What is the most common blood type?", ["o positive", "o+"]),
-        ("What is the name of the largest ocean on Earth?", ["pacific"]),
-        ("What is the capital of South Korea?", ["seoul"]),
-        ("What element has the chemical symbol 'Fe'?", ["iron"]),
-        ("Who discovered penicillin?", ["alexander fleming"]),
-        ("What is the main gas in the Earth's atmosphere?", ["nitrogen"]),
-        ("Who is the author of 'The Catcher in the Rye'?", ["j.d. salinger"]),
-    ]
-
-    math_questions = [
-        ("What is 5 + 7?", ["12"]),
-        ("What is 15 - 6?", ["9"]),
-        ("What is 8 * 7?", ["56"]),
-        ("What is 81 / 9?", ["9"]),
-        ("What is the square root of 144?", ["12"]),
-        ("What is 10 % 3?", ["1"]),
-        ("What is 9 + 10?", ["19"]),
-        ("What is 20 - 4 * 3?", ["8"]),
-        ("What is 50 / 2 + 25?", ["50"]),
-        ("What is 15 + 5 * 2?", ["25"]),
-        ("What is 6 * (2 + 3)?", ["30"]),
-        ("What is 3^3?", ["27"]),
-        ("What is 8 + 6 / 3?", ["10"]),
-        ("What is the value of π (Pi) rounded to two decimal places?", ["3.14"]),
-        ("What is 2 + 2 * 2?", ["6"]),
-        ("What is the area of a rectangle with length 4 and width 3?", ["12"]),
-        ("What is the perimeter of a square with sides of length 5?", ["20"]),
-        ("If a triangle has a base of 10 and a height of 5, what is its area?", ["25"]),
-        ("If you roll a die, what is the probability of rolling a 3?", ["1/6"]),
-        ("What is 100 - (2 * 25)?", ["50"]),
-        ("What is the next prime number after 7?", ["11"]),
-        ("What is the sum of the angles in a triangle?", ["180"]),
-        ("What is 4 + 4 * 4?", ["20"]),
-        ("What is the hypotenuse of a right triangle with legs of 3 and 4?", ["5"]),
-        ("If I have 3 apples and you give me 2 more, how many do I have?", ["5"]),
-        ("If 5x = 20, what is x?", ["4"]),
-        ("What is 6 + 4?", ["10"]),
-        ("What is the cube of 3?", ["27"]),
-        ("What is the next number in the sequence: 2, 4, 6, 8, ...?", ["10"]),
-        ("If a train travels 60 miles in 1 hour, how far will it travel in 3 hours?", ["180"]),
-        ("What is 12 / 4?", ["3"]),
-        ("What is the sum of 1, 2, and 3?", ["6"]),
-    ]
-
-    return {
-        'easy': easy_questions,
-        'medium': medium_questions,
-        'hard': hard_questions,
-        'extreme': extreme_questions,
-        'math': math_questions,
-    }
-
-def get_random_question(difficulty):
-    questions = get_question_sets()[difficulty]
-    return random.choice(questions)
-
-def check_answer(question, answer):
-    return answer.lower() in question[1] if isinstance(question[1], list) else answer.lower() == question[1]
-
-def play_game():
-    print(f"{GREEN}WELCOME TO ALEX HARWOOD'S CLI TRIVIA GAME{RESET}")
-    time.sleep(1)
+# Function to run the trivia game
+def run_trivia():
+    print("WELCOME TO ALEX HARWOOD'S CLI TRIVIA GAME".center(80, '*'))
+    print("\nSelect difficulty level:")
+    print("1. Easy")
+    print("2. Medium")
+    print("3. Hard")
+    print("4. Extreme")
+    print("5. Type-in")
     
-    scores = {difficulty: 0 for difficulty in get_question_sets()}
-    rounds = {'easy': 0, 'medium': 0, 'hard': 0, 'extreme': 0, 'math': 0}
+    choice = input("Enter the number of your choice: ")
+    
+    if choice == "1":
+        difficulty = "Easy"
+    elif choice == "2":
+        difficulty = "Medium"
+    elif choice == "3":
+        difficulty = "Hard"
+    elif choice == "4":
+        difficulty = "Extreme"
+    elif choice == "5":
+        difficulty = "Type-in"
+    else:
+        print("Invalid choice! Exiting the game.")
+        return
+    
+    score = 0
+    total_questions = 30 if difficulty != "Type-in" else 20
+    questions = trivia_questions[difficulty] if difficulty != "Type-in" else type_in_questions
 
-    while True:
-        difficulty = input("Choose a difficulty level (easy, medium, hard, extreme, math) or type 'exit' to quit: ").lower()
-        if difficulty == 'exit':
-            break
-        if difficulty not in rounds:
-            print("Invalid difficulty. Please choose again.")
-            continue
+    random.shuffle(questions)
+    questions = questions[:total_questions]
 
-        rounds[difficulty] += 1
-        question = get_random_question(difficulty)
-        display_warning()
-
-        print(f"Question: {question[0]}")
-        user_answer = input("Your answer: ")
-
-        if check_answer(question, user_answer):
-            print(f"{GREEN}Correct!{RESET}")
-            scores[difficulty] += 1
+    for q in questions:
+        answer = input(f"{q['question']} ").strip().lower()
+        if answer == q['answer']:
+            print("Correct!")
+            score += 1
         else:
-            print(f"{RED}Wrong! The correct answer was: {', '.join(question[1])}{RESET}")
-
-        print(f"Score for {difficulty} difficulty: {scores[difficulty]}/{rounds[difficulty]}")
-        print()
-
-    print("Final Scores:")
-    for diff, score in scores.items():
-        print(f"{diff.capitalize()}: {score} correct answers in {rounds[diff]} rounds")
+            print(f"Wrong! The correct answer is: {q['answer']}.")
+    
+    print(f"\nYour score: {score}/{total_questions}")
 
 if __name__ == "__main__":
-    play_game()
+    run_trivia()
