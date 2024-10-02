@@ -1,8 +1,35 @@
 import random
 
 class TriviaGame:
-    def __init__(self):
-        self.categories = {
+    def play(self):
+        while True:
+            try:
+                rounds = int(input("How many rounds would you like to play? "))
+                break
+            except ValueError:
+                print("Please enter a valid number.")
+
+        category = self.select_category()
+        # Add remaining logic for playing the game
+
+    def select_category(self):
+        print("Choose a category:")
+        print("1. Easy\n2. Medium\n3. Hard\n4. Extreme\n5. Math")
+        while True:
+            try:
+                category_choice = int(input()) - 1
+                if 0 <= category_choice < 5:
+                    return self.categories[category_choice]
+                else:
+                    print("Please select a number between 1 and 5.")
+            except ValueError:
+                print("Please enter a valid number.")
+
+    # Ensure this is defined somewhere in your class
+    def some_method(self, difficulty):
+        if difficulty in self.difficulties:
+            # Your logic here
+
             "Easy": [
                 ("What is 2 + 2?", "4", ["3", "4", "5", "6"]),
                 ("How many legs does a spider have?", "8", ["6", "7", "8", "10"]),
