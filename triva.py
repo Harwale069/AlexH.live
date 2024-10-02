@@ -1,36 +1,16 @@
 import random
 
 class TriviaGame:
-    def play(self):
-        while True:
-            try:
-                rounds = int(input("How many rounds would you like to play? "))
-                break
-            except ValueError:
-                print("Please enter a valid number.")
-
-        category = self.select_category()
-        # Add remaining logic for playing the game
-
-    def select_category(self):
-        print("Choose a category:")
-        print("1. Easy\n2. Medium\n3. Hard\n4. Extreme\n5. Math")
-        while True:
-            try:
-                category_choice = int(input()) - 1
-                if 0 <= category_choice < 5:
-                    return self.categories[category_choice]
-                else:
-                    print("Please select a number between 1 and 5.")
-            except ValueError:
-                print("Please enter a valid number.")
-
-    # Ensure this is defined somewhere in your class
-    def some_method(self, difficulty):
-        if difficulty in self.difficulties:
-            # Your logic here
-
+    def __init__(self):
+        self.categories = ["Easy", "Medium", "Hard", "Extreme", "Math"]
+        self.questions = {
             "Easy": [
+                ("What is 2 + 2?", "4", ["3", "4", "5", "6"]),
+                ("How many legs does a spider have?", "8", ["6", "7", "8", "10"]),
+                # ... other easy questions
+            ],
+            "Medium": [
+                ("What is the primary ingredient in hummus?", "Chickpeas", ["Chickpeas", "Lentils", "Peas", "Beans"]),
                 ("What is 2 + 2?", "4", ["3", "4", "5", "6"]),
                 ("How many legs does a spider have?", "8", ["6", "7", "8", "10"]),
                 ("What is the capital of France?", "Paris", ["Paris", "Rome", "Berlin", "Madrid"]),
@@ -58,7 +38,8 @@ class TriviaGame:
                 ("What is the tallest mountain in the world?", "Mount Everest", ["K2", "Mount Everest", "Kilimanjaro", "Denali"]),
                 ("Which gas do plants absorb from the atmosphere?", "Carbon Dioxide", ["Oxygen", "Nitrogen", "Carbon Dioxide", "Hydrogen"]),
             ],
-            "Medium": [
+            "Hard": [
+                ("What is Schrödinger's cat?", "Thought experiment", ["Animal", "Thought experiment", "Quantum cat", "Experiment"]),
                 ("What is the primary ingredient in hummus?", "Chickpeas", ["Chickpeas", "Lentils", "Peas", "Beans"]),
                 ("What is the smallest continent?", "Australia", ["Africa", "Asia", "Australia", "Europe"]),
                 ("What is the boiling point of water?", "100", ["90", "100", "120", "110"]),
@@ -83,31 +64,6 @@ class TriviaGame:
                 ("What is the primary function of red blood cells?", "Transport Oxygen", ["Fight Infection", "Transport Oxygen", "Clot Blood", "Digest Food"]),
                 ("Who was the first man on the moon?", "Neil Armstrong", ["Buzz Aldrin", "Yuri Gagarin", "Neil Armstrong", "Michael Collins"]),
                 ("What is the capital of Greece?", "Athens", ["Rome", "Athens", "Paris", "Berlin"]),
-            ],
-            "Hard": [
-                ("What is Schrödinger's cat?", "Thought experiment", ["Animal", "Thought experiment", "Quantum cat", "Experiment"]),
-                ("What is the black hole information paradox?", "Paradox", ["Theory", "Paradox", "Experiment", "Thought"]),
-                ("What is the Uncertainty Principle?", "Principle", ["Law", "Principle", "Theory", "Concept"]),
-                ("What is the capital of Mozambique?", "Maputo", ["Maputo", "Lagos", "Nairobi", "Johannesburg"]),
-                ("What is the capital of Eswatini?", "Mbabane", ["Mbabane", "Pretoria", "Harare", "Gaborone"]),
-                ("What is the speed of light in vacuum?", "299,792 km/s", ["299,792 km/s", "300,000 km/s", "150,000 km/s", "400,000 km/s"]),
-                ("Who developed the theory of general relativity?", "Albert Einstein", ["Isaac Newton", "Albert Einstein", "Galileo Galilei", "Nikola Tesla"]),
-                ("What is the rarest blood type?", "AB negative", ["A positive", "O negative", "AB negative", "B positive"]),
-                ("What is the first element on the periodic table?", "Hydrogen", ["Helium", "Oxygen", "Hydrogen", "Carbon"]),
-                ("What is the hardest known natural material?", "Diamond", ["Diamond", "Ruby", "Sapphire", "Emerald"]),
-                ("What is the largest internal organ in the human body?", "Liver", ["Heart", "Liver", "Kidney", "Lung"]),
-                ("What is the most abundant element in the universe?", "Hydrogen", ["Oxygen", "Hydrogen", "Carbon", "Nitrogen"]),
-                ("What is the smallest bone in the human body?", "Stapes", ["Stapes", "Incus", "Malleus", "Femur"]),
-                ("Who is known as the father of modern physics?", "Albert Einstein", ["Isaac Newton", "Albert Einstein", "Galileo Galilei", "Stephen Hawking"]),
-                ("What is the capital of Bhutan?", "Thimphu", ["Thimphu", "Kathmandu", "Lhasa", "Dhaka"]),
-                ("What is the formula for calculating the area of a circle?", "πr²", ["πr", "2πr", "πr²", "πd"]),
-                ("What is the capital of Fiji?", "Suva", ["Nadi", "Suva", "Lautoka", "Levuka"]),
-                ("What is the most spoken language in the world?", "Mandarin Chinese", ["English", "Mandarin Chinese", "Spanish", "Hindi"]),
-                ("What is the capital of Latvia?", "Riga", ["Tallinn", "Vilnius", "Riga", "Minsk"]),
-                ("What is the longest river in the world?", "Nile", ["Amazon", "Nile", "Yangtze", "Mississippi"]),
-                ("What is the main ingredient in traditional Japanese miso soup?", "Miso", ["Soy", "Miso", "Seaweed", "Fish"]),
-                ("What year did World War II end?", "1945", ["1944", "1945", "1946", "1947"]),
-                ("What is the most widely practiced religion in the world?", "Christianity", ["Buddhism", "Hinduism", "Christianity", "Islam"]),
             ],
             "Extreme": [
                 ("What is the theoretical temperature at which all molecular motion ceases?", "Absolute Zero", ["Absolute Zero", "Freezing Point", "Boiling Point", "Room Temperature"]),
@@ -136,6 +92,7 @@ class TriviaGame:
                 ("What is the main organ involved in the circulatory system?", "Heart", ["Lung", "Heart", "Liver", "Kidney"]),
             ],
             "Math": [
+                ("What is 5 x 6?", "30", ["24", "30", "36", "42"]),
                 ("What is 5 + 7?", "12", ["11", "12", "13", "14"]),
                 ("What is 15 ÷ 3?", "5", ["4", "5", "6", "7"]),
                 ("What is the area of a rectangle with length 4 and width 5?", "20", ["18", "19", "20", "21"]),
@@ -165,12 +122,49 @@ class TriviaGame:
                 ("What is 50% of 80?", "40", ["30", "40", "50", "60"]),
             ],
         }
-        self.scores = {}
 
-    def display_welcome(self):
-        print("\033[5mWELCOME TO ALEX HARWOOD'S CLI TRIVIA GAME\033[0m")
-
-    def select_difficulty(self):
+    def play(self):
         while True:
-            difficulty = input("Select difficulty (Easy, Medium, Hard, Extreme, Math): ").capitalize()
-            if difficulty in self
+            try:
+                rounds = int(input("How many rounds would you like to play? "))
+                if rounds <= 0:
+                    print("Please enter a number greater than zero.")
+                else:
+                    break
+            except ValueError:
+                print("Please enter a valid number.")
+
+        category = self.select_category()
+        self.ask_questions(category, rounds)
+
+    def select_category(self):
+        print("Choose a category:")
+        for idx, category in enumerate(self.categories, start=1):
+            print(f"{idx}. {category}")
+        while True:
+            try:
+                category_choice = int(input()) - 1
+                if 0 <= category_choice < len(self.categories):
+                    return self.categories[category_choice]
+                else:
+                    print("Please select a valid number.")
+            except ValueError:
+                print("Please enter a valid number.")
+
+    def ask_questions(self, category, rounds):
+        questions = self.questions[category]
+        for _ in range(rounds):
+            question, correct_answer, options = random.choice(questions)
+            print(question)
+            print("Options:", ', '.join(options))
+            user_answer = input("Your answer: ")
+            if user_answer.lower() == correct_answer.lower():
+                print("Correct!")
+            else:
+                print(f"Incorrect! The correct answer is: {correct_answer}")
+
+# Example of running the game
+if __name__ == "__main__":
+    game = TriviaGame()
+    game.play()
+
